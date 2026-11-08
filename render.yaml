@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: jobhunter-oidc-sandbox
+    runtime: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python render_start.py
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: APP_ALLOWED_EMAILS
+        sync: false
+      - key: OIDC_REDIRECT_URI
+        sync: false
+      - key: OIDC_CLIENT_ID
+        sync: false
+      - key: OIDC_CLIENT_SECRET
+        sync: false
+      - key: OIDC_COOKIE_SECRET
+        sync: false
