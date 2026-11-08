@@ -1,0 +1,10 @@
+# Never push secrets or runtime files to a public repository.
+.streamlit/secrets.toml
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+*.sqlite*
